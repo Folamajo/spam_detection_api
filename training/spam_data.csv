@@ -1,0 +1,18 @@
+Text,Label
+"""Limited time offer! Claim your prize now!""",Spam
+"""Can you send me the notes from class?""",Not Spam
+"""Act now! Get 50% off your subscription!"" ",Spam
+"""Are you free for a call later today?""",Not Spam
+"""Congratulations! You've been selected for a $500 gift card!""",Spam
+"""Your account is at risk! Click here to secure it.""",Spam
+"""Don’t forget about the team meeting at 10am.""",Not Spam
+"""Win a brand new car! Click the link to enter.""",Spam
+"""Happy birthday! Hope you have an amazing day."" ",Not Spam
+"""Urgent: Your Netflix account has been suspended!""",Spam
+"""Can you review this document before the deadline?""",Not Spam
+"""Congratulations, you’ve won an all-expense-paid trip!""",Spam
+"""Are you bringing anything to the party?""",Not Spam
+"""Exclusive offer! Get a free gift with purchase."" ",Spam
+"""Hey, did you see the new episode last night?""",Not Spam
+"""Your package is waiting. Confirm your delivery here."" ",Spam
+"""Let’s reschedule our coffee chat for next week."" ",Not Spam
