@@ -1,18 +1,101 @@
 Text,Label
 """Limited time offer! Claim your prize now!""",Spam
-"""Can you send me the notes from class?""",Not Spam
-"""Act now! Get 50% off your subscription!"" ",Spam
-"""Are you free for a call later today?""",Not Spam
+"""Act now! Get 50% off your subscription!""",Spam
 """Congratulations! You've been selected for a $500 gift card!""",Spam
 """Your account is at risk! Click here to secure it.""",Spam
-"""Don’t forget about the team meeting at 10am.""",Not Spam
 """Win a brand new car! Click the link to enter.""",Spam
-"""Happy birthday! Hope you have an amazing day."" ",Not Spam
 """Urgent: Your Netflix account has been suspended!""",Spam
-"""Can you review this document before the deadline?""",Not Spam
 """Congratulations, you’ve won an all-expense-paid trip!""",Spam
+"""Exclusive offer! Get a free gift with purchase.""",Spam
+"""Your package is waiting. Confirm your delivery here.""",Spam
+"""Claim your free trial before it expires!""",Spam
+"""You’re the lucky winner! Click to claim your prize.""",Spam
+"""Limited stock available! Order now before it’s gone.""",Spam
+"""Earn $500 per day working from home. Sign up now!""",Spam
+"""Your loan has been pre-approved! Apply today.""",Spam
+"""Warning! Unusual login detected on your account.""",Spam
+"""Get your free credit score check today!""",Spam
+"""Hurry! This deal won’t last long.""",Spam
+"""You’ve been randomly selected for a gift!""",Spam
+"""Final reminder: Your account will be locked if you don’t verify.""",Spam
+"""You just won a free vacation! Click to confirm.""",Spam
+"""Unlock your reward now! Limited time only.""",Spam
+"""Get your free gift card worth $100!""",Spam
+"""Exclusive discount just for you! Shop now!""",Spam
+"""Click here to claim your exclusive prize.""",Spam
+"""Buy one, get one free on all items today only!""",Spam
+"""Activate your account today to claim your bonus.""",Spam
+"""Last chance to win big! Enter now.""",Spam
+"""Congratulations! You’ve won a $1000 shopping spree!""",Spam
+"""Big savings on electronics! Shop before it’s gone.""",Spam
+"""Urgent action required: Update your payment information.""",Spam
+"""Limited time offer: 90% off all items in your cart!""",Spam
+"""Your account is in jeopardy! Secure it now!""",Spam
+"""Free consultation on your retirement planning. Book now.""",Spam
+"""Don’t miss out on this once-in-a-lifetime offer!""",Spam
+"""Final chance to grab your free vacation package!""",Spam
+"""You’ve been selected for a $5000 prize!""",Spam
+"""Complete your purchase to claim your special offer.""",Spam
+"""Congratulations! You've earned a free cruise vacation.""",Spam
+"""Hurry! Get a free iPhone with your order.""",Spam
+"""Apply for a loan today and receive an instant approval.""",Spam
+"""Get paid to watch videos! Sign up now.""",Spam
+"""Your gift card is waiting! Click here to claim it.""",Spam
+"""Limited offer: Get free airfare to any destination!""",Spam
+"""Flash sale: Everything must go! Up to 80% off.""",Spam
+"""You’ve won a $2000 gift card! Claim it now.""",Spam
+"""Sign up now to receive a free smartwatch!""",Spam
+"""Your new laptop is waiting for you. Buy now!""",Spam
+"""Last chance to win a dream vacation! Enter today.""",Spam
+"""You’re just one click away from your free $500 gift.""",Spam
+"""Don’t miss your chance to secure this limited-time offer!""",Spam
+"""Can you send me the notes from class?""",Not Spam
+"""Are you free for a call later today?""",Not Spam
+"""Don’t forget about the team meeting at 10am.""",Not Spam
+"""Happy birthday! Hope you have an amazing day.""",Not Spam
+"""Can you review this document before the deadline?""",Not Spam
 """Are you bringing anything to the party?""",Not Spam
-"""Exclusive offer! Get a free gift with purchase."" ",Spam
 """Hey, did you see the new episode last night?""",Not Spam
-"""Your package is waiting. Confirm your delivery here."" ",Spam
-"""Let’s reschedule our coffee chat for next week."" ",Not Spam
+"""Let’s reschedule our coffee chat for next week.""",Not Spam
+"""Just checking in to see how you’re doing.""",Not Spam
+"""Do you want to grab lunch tomorrow?""",Not Spam
+"""Great job on your presentation today!""",Not Spam
+"""Remember to submit your project by Friday.""",Not Spam
+"""Are you coming to the gym later?""",Not Spam
+"""It was great catching up with you!""",Not Spam
+"""Looking forward to our meeting next week.""",Not Spam
+"""What time does the event start?""",Not Spam
+"""Can you pick up some groceries on your way home?""",Not Spam
+"""Did you get my last email?""",Not Spam
+"""Let’s plan a weekend trip soon!""",Not Spam
+"""I really enjoyed our conversation yesterday.""",Not Spam
+"""What’s your plan for the weekend?""",Not Spam
+"""Can you help me with that task later?""",Not Spam
+"""When is the next team meeting?""",Not Spam
+"""Let me know if you need anything else!""",Not Spam
+"""Thanks for your feedback on the report.""",Not Spam
+"""Do you have time to chat tomorrow?""",Not Spam
+"""I’d love to hear your thoughts on this idea.""",Not Spam
+"""Let me know if you’re free for a quick meeting.""",Not Spam
+"""I’ll send you the files right away.""",Not Spam
+"""It was nice seeing you at the conference.""",Not Spam
+"""Looking forward to catching up soon!""",Not Spam
+"""Can you send me the updated schedule?""",Not Spam
+"""We should plan another team-building activity.""",Not Spam
+"""What’s the best time for our next call?""",Not Spam
+"""Can you give me a quick update on the project?""",Not Spam
+"""I’ll follow up with you after the meeting.""",Not Spam
+"""Let me know if you need more information.""",Not Spam
+"""Would you like to collaborate on this project?""",Not Spam
+"""Please let me know when you’re available.""",Not Spam
+"""We need to finalize the details by the end of the week.""",Not Spam
+"""I’d like to get your opinion on something.""",Not Spam
+"""Let’s brainstorm some ideas for the new campaign.""",Not Spam
+"""Are we still on for our lunch tomorrow?""",Not Spam
+"""Thanks for your patience while I get the report ready.""",Not Spam
+"""Can you review the draft and share your thoughts?""",Not Spam
+"""I’ll send over the documents right now.""",Not Spam
+"""What time works best for you to meet?""",Not Spam
+"""Looking forward to hearing back from you soon.""",Not Spam
+"""Please confirm your availability for the meeting.""",Not Spam
+"""It was great working with you on that project!""",Not Spam
