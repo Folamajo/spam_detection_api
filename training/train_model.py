@@ -29,6 +29,7 @@ from sklearn.model_selection import train_test_split #Splits the dataset
 from sklearn.naive_bayes import MultinomialNB #Naive Bayes classifier
 from sklearn.preprocessing import LabelEncoder #Helps to convert labels to numberic values
 from sklearn.metrics import accuracy_score, classification_report
+import pickle
 
 #2- Loading the dataset
 
@@ -63,8 +64,14 @@ accuracy = accuracy_score(model_predictions, y_test)
 print(accuracy)
 print(classification_report(y_test, model_predictions)) #0.75 accurately prdicted 75% of data
 
+with open("models/spam_classifier.pkl", "wb") as saved_model:
+   pickle.dump(model, saved_model)
 
-#7- IMPORVE SCORE
+with open("models/vectorizer.pkl", "wb") as saved_vectorizer:
+   pickle.dump(X_train_tfidf, vectorizer)
+#7- IMPROVE SCORE
+
+
 # Result after testing
 # training data shape: (13, 54)
 # testing data shape: (4, 54)
