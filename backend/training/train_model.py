@@ -28,7 +28,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer #Converts text into 
 from sklearn.model_selection import train_test_split #Splits the dataset
 from sklearn.naive_bayes import MultinomialNB #Naive Bayes classifier
 from sklearn.preprocessing import LabelEncoder #Helps to convert labels to numberic values
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report # type: ignore
 import pickle
 
 #2- Loading the dataset

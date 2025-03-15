@@ -1,5 +1,6 @@
 import pickle
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 #Step 1: Create FastAPI app
 # Step 2: Load Model and Vectoriser on Startup from models/spam_classifier.pkl, models/vectorizer.pkl
@@ -26,12 +27,31 @@ model_prediction = loaded_model.predict(transformed_list)
 
 print(model_prediction)
 
+class Message(BaseModel):
+   message: str
 
+labels = {
+   0 : "not spam",
+   1 : "spam"
+}
+   
 app = FastAPI()
 
 @app.post("/")
-async def root():
-   return {"message: Hello World"}
+async def spam_checker(message: Message):
+
+   
+   #Use vectorizer to transform the input
+   transformed_message = loaded_vectorizer.transform([message.message])
+   predict_spam = loaded_model.predict(transformed_message)
+   #Pass the transformed input to the model for prediction
+   #Return the prediction
+
+   return {"status: " + labels[predict_spam[0]]}
+
+
+
+
 # Log success or failure
 # Store in global variables so /predict can use them
 
