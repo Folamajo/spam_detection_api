@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios, { AxiosError } from "axios"
 import { useState } from "react"
 
 
@@ -6,48 +6,95 @@ import { useState } from "react"
 function App() {
    const [inputValue, setInputValue] = useState<string>("")
    const [displayMessage, setDisplayMessage] = useState<string>("")
+   const [result, setResult] = useState<string>("")
+   const [errorMessage, setErrorMessage] = useState<string>("")
 
-   const handleChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+   const handleChange = (event:React.ChangeEvent<HTMLTextAreaElement>) => {
+      setDisplayMessage("")
+      setErrorMessage("")
       setInputValue(event.target.value)
    }
 
    const handleSubmit = async () =>{
-      console.log("Submitting:", inputValue)
-      setDisplayMessage(inputValue)
+      // console.log("Submitting:", inputValue)
+      if (inputValue.trim() == ""){
+         setErrorMessage("Please enter text before checking")
+         return;
+      }
+      
       setInputValue("")
       
       
+      setErrorMessage("")
+      try{
+         const response = await axios.post( "http://127.0.0.1:8000/", {
+            message : inputValue
+         })
+         setDisplayMessage(inputValue)
+         setResult(response.data[1])
+      }catch(error){
+         if(axios.isAxiosError(error)){
+            if(error.code === "ERR_NETWORK"){
+               setErrorMessage("Unable to connect to the server.")
+            }
 
-      const response = await axios({
-         method: "POST",
-         url: "http://127.0.0.1:8000/",
-         data: {
-            "message" : inputValue
+            if(error.response?.status === 400){
+               setErrorMessage("You entered an Invalid input.")
+            }
+            else if (error.response?.status === 404){
+               setErrorMessage("Requested resource was not found.")
+            }
+            else if (error.response?.status === 500){
+               setErrorMessage("Something went wrong on our end. Please try again later.")
+            }
+            else {
+               setErrorMessage("Something went wrong. Please try again later.")
+            }
+
+            
+         }else{
+            console.error(error)
          }
-      });
-      console.log(response)
+      }
+      
+      // console.log(response.data[1])
       
    }
    return (
       <>
-         <input 
-            type="text"
+      <div id ="container">
+         <textarea 
+            
             value = {inputValue}
             onChange= {handleChange}
             placeholder="Enter message..."
+            id ="input_box"
          />
+
+         {
+            errorMessage && (
+               <p>{errorMessage}</p>
+            )
+         }
          <button
             onClick={handleSubmit}>
-            Check
+            <strong>Check</strong>
          </button>
 
          
          {
             displayMessage && (
-               <h3>Your message: {displayMessage} is </h3>
+               <>
+                  <p>{displayMessage}</p>
+                  {result == "spam" && <p>This is most likely <strong>spam</strong>.</p> }
+                  {result == "not spam" && <p>This is most likely <strong>not spam</strong>.</p> }
+
+                  
+               </>
             )
          }
          
+      </div>
       </>
    )
 }

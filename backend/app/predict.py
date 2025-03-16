@@ -1,5 +1,6 @@
 import pickle
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 #Step 1: Create FastAPI app
@@ -16,10 +17,10 @@ sample_prediction = [
    "Thank you for paying last month’s bill. We’re rewarding our very best customers with a gift for their loyalty. Click here"
 ]
 #Load the model from models/spam_classifier.pkl, models/vectorizer.pkl
-with open("../models/spam_classifier.pkl", "rb") as saved_model:
+with open("/Users/fola/Documents/Projects/spam_detection_api/backend/models/spam_classifier.pkl", "rb") as saved_model:
    loaded_model = pickle.load(saved_model)
 
-with open("../models/vectorizer.pkl", "rb") as saved_vectorizer:
+with open("/Users/fola/Documents/Projects/spam_detection_api/backend/models/vectorizer.pkl", "rb") as saved_vectorizer:
    loaded_vectorizer = pickle.load(saved_vectorizer)
 
 transformed_list = loaded_vectorizer.transform(sample_prediction)
@@ -37,6 +38,17 @@ labels = {
    
 app = FastAPI()
 
+origins = [
+   "http://localhost:5173"
+]
+
+app.add_middleware(
+   CORSMiddleware,
+   allow_origins = origins,
+   allow_credentials = True,
+   allow_methods = ["*"],
+   allow_headers = ["*"],
+)
 @app.post("/")
 async def spam_checker(message: Message):
 
@@ -47,7 +59,7 @@ async def spam_checker(message: Message):
    #Pass the transformed input to the model for prediction
    #Return the prediction
 
-   return {"status: " + labels[predict_spam[0]]}
+   return {"status: ", labels[predict_spam[0]]}
 
 
 

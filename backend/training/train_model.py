@@ -37,7 +37,7 @@ label_encoder = LabelEncoder()
 path_to_file ="/Users/fola/Documents/Projects/spam_detection_api/training/spam_data.csv"
 training_data = pd.read_csv(path_to_file)
 training_data["Label"] = label_encoder.fit_transform(training_data["Label"])
-print(training_data)
+# print(training_data)
 
 #3- Split dataset
 X_train, X_test, y_train, y_test = train_test_split(training_data["Text"], training_data["Label"], test_size=0.2, random_state=42)
