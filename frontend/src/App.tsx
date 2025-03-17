@@ -16,22 +16,23 @@ function App() {
    }
 
    const handleSubmit = async () =>{
-      // console.log("Submitting:", inputValue)
+      setDisplayMessage("")
       if (inputValue.trim() == ""){
          setErrorMessage("Please enter text before checking")
          return;
       }
       
       setInputValue("")
-      
-      
       setErrorMessage("")
       try{
          const response = await axios.post( "http://127.0.0.1:8000/", {
             message : inputValue
+            
          })
-         setDisplayMessage(inputValue)
-         setResult(response.data[1])
+            setDisplayMessage(inputValue)
+            setResult(response.data[0])
+            console.log(response)
+         
       }catch(error){
          if(axios.isAxiosError(error)){
             if(error.code === "ERR_NETWORK"){
@@ -84,13 +85,11 @@ function App() {
          
          {
             displayMessage && (
-               <>
-                  <p>{displayMessage}</p>
-                  {result == "spam" && <p>This is most likely <strong>spam</strong>.</p> }
-                  {result == "not spam" && <p>This is most likely <strong>not spam</strong>.</p> }
-
-                  
-               </>
+               <div id="user_display">
+                  <p className = "user_display"><em>"{displayMessage}"</em></p>
+                  {result == "spam" && <p className = "spam_result" >This is most likely <strong>spam</strong>.</p> }
+                  {result == "not spam" && <p className = "spam_result" >This is most likely <strong>not spam</strong>.</p> }
+               </div>
             )
          }
          
