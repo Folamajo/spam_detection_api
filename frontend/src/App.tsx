@@ -30,7 +30,7 @@ function App() {
             
          })
             setDisplayMessage(inputValue)
-            setResult(response.data[0])
+            setResult(response.data[1])
             console.log(response)
          
       }catch(error){
